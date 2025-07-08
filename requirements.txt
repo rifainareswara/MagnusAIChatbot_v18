@@ -1,0 +1,17 @@
+streamlit
+pandas
+boto3
+python-dotenv
+langchain
+faiss-cpu
+openpyxl
+xlrd
+pytz
+flask
+werkzeug
+markdown
+beautifulsoup4
+reportlab
+tabulate
+langchain-community
+langchain-aws

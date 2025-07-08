@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  magnusai:
+    container_name: magnusai-v19
+    build:
+      context: .          # direktori proyek v19
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"       # host:container
+    env_file:
+      - .env              # kredensial AWS & Bedrock
+    environment:
+      # override jika perlu
+      - BUCKET_NAME=rifai-ai-bucket
+      - AWS_DEFAULT_REGION=us-east-1
+      # Streamlit watchfiles di container (hindari inotify limit)
+      - WATCHFILES_FORCE_POLLING=true
+    volumes:
+      - .:/app            # hot-reload kode lokal → container (mode dev)
+    restart: unless-stopped

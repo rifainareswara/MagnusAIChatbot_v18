@@ -819,7 +819,7 @@ def main():
     if 'chat_manager' not in st.session_state:
         st.session_state.chat_manager = ChatManager()
     if 'vectorstore_loaded' not in st.session_state:
-        st.session_state.vectorstore_loaded = False
+        st.session_state.vectorstore_loaded = True
 
     # Render UI
     render_sidebar()
